@@ -100,53 +100,15 @@ def main():
         description+='| accession number = ' + metadata.loc[i]['ObjectNumber'] + '\n'
         description+='| source           = {{KIT-ccid|' + str(metadata.loc[i]['ObjectID']) + '}}{{Expedition Wikipedia}}\n'
         description+='| permission       = ' + metadata.loc[i]['License'] + '\n}}\n\n'
+        #from here on categories
         description+='[[Category:Files from the Nationaal Museum van Wereldculturen]]\n'
 
         if not pd.isnull(metadata.loc[i]['Commonscat1']):
             description+='[[Category:' + metadata.loc[i]['Commonscat1'] + ']]\n'
         if not pd.isnull(metadata.loc[i]['Commonscat2']):
             description+='[[Category:' + metadata.loc[i]['Commonscat2'] + ']]\n'
-        if metadata.loc[i]['ObjectNumber'] in ['TM-60009978', 'TM-60010004', 'TM-60010015', 'TM-60010060', 'TM-60010061', 'TM-60010062',
-                                               'TM-60010081', 'TM-60010111', 'TM-60010162', 'TM-60010163', 'TM-60014986', 'TM-60014987', 'TM-60014998', ]:
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60009978']:
-                filename='Expeditielid J.W. van Nouhuys bij een boom in de rivier Ingsim - Collectie stichting Nationaal Museum van Wereldculturen - TM-60009978.jpg'
 
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010004']:
-                filename='Een Papua in een kano op het Sentani-meer - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010004.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010015']:
-                filename='Paalwoningen bij Poejo in het Sentani-meer - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010015.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010060']:
-                filename='Prauwen met Papua\'s in de Humboldt-baai bij de Zeemeeuw - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010060.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010061']:
-                filename='Prauwen met Papua\'s in de Humboldt-baai  bij het vertrek van h... - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010061.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010062']:
-                filename='Prauwen met Papua\'s in de Humboldt-baai bij het vertrek van h... - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010062.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010081']:
-                filename='Gezicht op een onderneming bij de ambtswoning van assistent-r... - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010081.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010111']:
-                filename='Portret van een groep Papua\'s bij Joka aan het Sentani-meer - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010111.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60010163']:
-                filename='Portret van een Papua familie voor hun huis - Collectie stichting Nationaal Museum van Wereldculturen - TM-60010163.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60014986']:
-                filename='Portret van een groep Papua\'s bij Joka aan het Sentani-meer - Collectie stichting Nationaal Museum van Wereldculturen - TM-60014986.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60014987']:
-                filename='Portret van de korano\'s van Tobadi en Ajapo bij Joka aan het ... - Collectie stichting Nationaal Museum van Wereldculturen - TM-60014987.jpg'
-
-            if metadata.loc[i]['ObjectNumber'] in ['TM-60014998']:
-                filename='Expeditielid L.F. de Beaufort met Papua\'s bij Joka aan het Se... - Collectie stichting Nationaal Museum van Wereldculturen - TM-60014998.jpg'
-
-            upload_file(url, description, filename)
-        #upload_file(url, description, filename)
-
+        upload_file(url, description, filename)
 
 if __name__ == "__main__":
     main()
